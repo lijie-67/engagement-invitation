@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李解 & 周璇 订婚请帖</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Microsoft YaHei",sans-serif;
+    background:#f8f4ee;
+    color:#5a4a42;
+}
+section{
+    padding:60px 18px;
+}
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#f8f4ee,#efe6d8);
+}
+.hero h1{
+    font-size:clamp(2rem,8vw,4rem);
+    margin-bottom:10px;
+}
+.hero p{
+    font-size:1.1rem;
+}
+.date{
+    margin-top:20px;
+    font-size:1.4rem;
+    font-weight:bold;
+}
+
+.card{
+    max-width:900px;
+    margin:auto;
+    background:#fff;
+    border-radius:20px;
+    padding:24px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.title{
+    text-align:center;
+    margin-bottom:25px;
+    font-size:1.8rem;
+}
+
+.timeline-item{
+    padding:16px 0;
+    border-left:3px solid #d8c3a5;
+    padding-left:18px;
+    margin-left:10px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    max-width:900px;
+    margin:auto;
+}
+
+.photo{
+    aspect-ratio:1/1;
+    border-radius:14px;
+    background:#ddd;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+}
+
+.letter{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.image-box{
+    height:280px;
+    border-radius:16px;
+    background:#ddd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.invitation{
+    text-align:center;
+}
+
+.footer{
+    text-align:center;
+    padding:50px 20px;
+    font-size:14px;
+}
+
+@media (min-width:768px){
+    .gallery{
+        grid-template-columns:repeat(3,1fr);
+    }
+    .letter{
+        grid-template-columns:1fr 1fr;
+    }
+    .image-box{
+        height:420px;
+    }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>李解 ❤ 周璇</h1>
+    <p>我们订婚啦</p>
+    <div class="date">2026.06.06</div>
+</section>
+
+<section>
+    <div class="card">
+        <div class="title">我们的故事</div>
+
+        <div class="timeline-item">
+            <strong>💌 相识 · 2025.02.03</strong><br>
+            故事从这一天悄悄开始。
+        </div>
+
+        <div class="timeline-item">
+            <strong>💕 相恋 · 2025.02.16</strong><br>
+            从相遇到相爱，每一天都值得纪念。
+        </div>
+
+        <div class="timeline-item">
+            <strong>🎉 订婚 · 2026.06.06</strong><br>
+            我们决定携手奔赴未来。
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="title">我们的照片</div>
+    <div class="gallery">
+        <div class="photo">照片 1</div>
+        <div class="photo">照片 2</div>
+        <div class="photo">照片 3</div>
+        <div class="photo">照片 4</div>
+        <div class="photo">照片 5</div>
+        <div class="photo">照片 6</div>
+    </div>
+</section>
+
+<section>
+    <div class="title">写给周璇的一封信</div>
+    <div class="letter">
+        <div class="image-box">放置合照</div>
+
+        <div class="card">
+            亲爱的周璇：<br><br>
+            感谢你出现在我的生命里。<br>
+            从相识到相恋，从心动到坚定，
+            每一步都因为有你而变得意义非凡。<br><br>
+
+            2026年6月6日，
+            我们将迎来人生新的篇章。<br>
+            愿未来的日子里，彼此陪伴，彼此成就。<br><br>
+
+            —— 李解
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="card invitation">
+        <div class="title">订婚邀请函</div>
+        <p>诚挚邀请您参加我们的订婚仪式</p><br>
+        <p><strong>时间：</strong>2026年6月6日</p>
+        <p><strong>地点：</strong>连云港市海州区蔚来礼宴</p><br>
+        <p>期待与您共同见证这份幸福与喜悦。</p>
+    </div>
+</section>
+
+<div class="footer">
+    李解 ❤ 周璇 · 2026.06.06
+</div>
+
+</body>
+</html>
