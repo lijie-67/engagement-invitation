@@ -3,251 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李解 & 周璇 订婚请帖</title>
+<title>李解 ❤ 周璇 · 订婚邀请函</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-    font-family:-apple-system,BlinkMacSystemFont,"Microsoft YaHei",sans-serif;
-    background:#f8f4ee;
-    color:#5a4a42;
-}
-section{
-    padding:60px 18px;
+background:#f7f2eb;
+color:#5d4b42;
+font-family:"Noto Serif SC",serif;
+overflow-x:hidden;
 }
 .hero{
-    position:relative;
-    min-height:100vh;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    background-image:url("cover.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    overflow:hidden;
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:url('"cover.jpg"') center/cover no-repeat;
 }
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.25);
+.hero:before{
+content:"";
+position:absolute;inset:0;
+background:rgba(0,0,0,.35);
+backdrop-filter:blur(2px);
 }
-.hero h1{
-    position:relative;
-    z-index:2;
-
-    font-size:clamp(2.5rem,8vw,4rem);
-    margin-bottom:10px;
-
-    color:white;
-    text-shadow:0 4px 15px rgba(0,0,0,.5);
+.hero-content{
+position:relative;z-index:2;color:#fff;
 }
-
-.hero p{
-    position:relative;
-    z-index:2;
-
-    font-size:1.3rem;
-    color:white;
-    text-shadow:0 2px 8px rgba(0,0,0,.5);
+.hero h1{font-size:clamp(3rem,8vw,5rem);margin-bottom:10px}
+.hero .sub{font-size:1.3rem;letter-spacing:4px}
+.hero .date{margin-top:20px;font-size:1.8rem}
+.scroll-tip{margin-top:50px;animation:updown 2s infinite}
+@keyframes updown{
+50%{transform:translateY(10px)}
 }
-
-.date{
-    position:relative;
-    z-index:2;
-
-    margin-top:20px;
-    font-size:1.6rem;
-    font-weight:bold;
-
-    color:white;
-    text-shadow:0 2px 8px rgba(0,0,0,.5);
-}
-.hero p{
-    font-size:1.1rem;
-}
-.date{
-    margin-top:20px;
-    font-size:1.4rem;
-    font-weight:bold;
-}
-
+section{padding:80px 20px}
+.container{max-width:1000px;margin:auto}
 .card{
-    max-width:900px;
-    margin:auto;
-    background:#fff;
-    border-radius:20px;
-    padding:24px;
-    box-shadow:0 8px 30px rgba(0,0,0,.08);
+background:#fff;
+border-radius:24px;
+padding:30px;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
 }
-
 .title{
-    text-align:center;
-    margin-bottom:25px;
-    font-size:1.8rem;
+text-align:center;
+font-size:2rem;
+margin-bottom:35px;
 }
-
-.timeline-item{
-    padding:16px 0;
-    border-left:3px solid #d8c3a5;
-    padding-left:18px;
-    margin-left:10px;
+.countdown{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+text-align:center;
 }
-
+.countdown div{
+background:#fff;
+padding:20px;
+border-radius:16px;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+.num{font-size:2rem;font-weight:bold}
+.timeline{
+border-left:3px solid #d7b899;
+padding-left:25px;
+}
+.item{margin-bottom:30px}
+.item h3{margin-bottom:8px}
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    max-width:900px;
-    margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:15px;
 }
-
 .photo{
-    aspect-ratio:1/1;
-    border-radius:14px;
-    background:#ddd;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:14px;
+height:280px;
+background:#ddd;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
 }
-
+.love-days{
+text-align:center;
+font-size:2rem;
+}
 .letter{
-    max-width:1000px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr;
-    gap:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
 }
-
 .image-box{
-    height:280px;
-    border-radius:16px;
-    background:#ddd;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+background:#ddd;
+min-height:420px;
+border-radius:20px;
+display:flex;
+justify-content:center;
+align-items:center;
 }
-
 .invitation{
-    text-align:center;
+text-align:center;
+line-height:2;
 }
-
 .footer{
-    text-align:center;
-    padding:50px 20px;
-    font-size:14px;
+padding:50px;
+text-align:center;
 }
-
-@media (min-width:768px){
-    .gallery{
-        grid-template-columns:repeat(3,1fr);
-    }
-    .letter{
-        grid-template-columns:1fr 1fr;
-    }
-    .image-box{
-        height:420px;
-    }
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:.8s;
+}
+.reveal.show{
+opacity:1;
+transform:none;
+}
+.heart{
+position:fixed;
+top:-10px;
+font-size:18px;
+animation:fall linear forwards;
+pointer-events:none;
+}
+@keyframes fall{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+@media(max-width:768px){
+.letter{grid-template-columns:1fr}
+.countdown{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
 <body>
 
 <section class="hero">
-
-    <h1>李解 ❤ 周璇</h1>
-
-    <p>我们订婚啦</p>
-
-    <div class="date">2026.06.06</div>
-
-    <p style="
-        position:relative;
-        z-index:2;
-        margin-top:30px;
-        max-width:300px;
-        line-height:1.8;
-        color:white;">
-        从相识到相恋<br>
-        从心动到坚定<br>
-        我们决定携手走向未来
-    </p>
-
+<div class="hero-content">
+<h1>李解 ❤ 周璇</h1>
+<div class="sub">ENGAGEMENT CEREMONY</div>
+<div class="date">2026.06.06</div>
+<div style="margin-top:25px;line-height:2">
+以爱之名 · 共赴余生<br>
+从心动到坚定，从相恋到相守
+</div>
+<div class="scroll-tip">↓ 向上滑动开启我们的故事</div>
+</div>
 </section>
 
-<section>
-    <div class="card">
-        <div class="title">我们的故事</div>
-
-        <div class="timeline-item">
-            <strong>💌 相识 · 2025.02.03</strong><br>
-            故事从这一天悄悄开始。
-        </div>
-
-        <div class="timeline-item">
-            <strong>💕 相恋 · 2025.02.16</strong><br>
-            从相遇到相爱，每一天都值得纪念。
-        </div>
-
-        <div class="timeline-item">
-            <strong>🎉 订婚 · 2026.06.06</strong><br>
-            我们决定携手奔赴未来。
-        </div>
-    </div>
+<section class="reveal">
+<div class="container">
+<h2 class="title">恋爱天数</h2>
+<div class="love-days">
+我们已经相爱 <span id="loveDays"></span> 天
+</div>
+</div>
 </section>
 
-<section>
-    <div class="title">我们的照片</div>
-    <div class="gallery">
-        <div class="photo">照片 1</div>
-        <div class="photo">照片 2</div>
-        <div class="photo">照片 3</div>
-        <div class="photo">照片 4</div>
-        <div class="photo">照片 5</div>
-        <div class="photo">照片 6</div>
-    </div>
+<section class="reveal">
+<div class="container">
+<h2 class="title">订婚倒计时</h2>
+<div class="countdown">
+<div><div class="num" id="d">0</div>天</div>
+<div><div class="num" id="h">0</div>时</div>
+<div><div class="num" id="m">0</div>分</div>
+<div><div class="num" id="s">0</div>秒</div>
+</div>
+</div>
 </section>
 
-<section>
-    <div class="title">写给周璇的一封信</div>
-    <div class="letter">
-        <div class="image-box">放置合照</div>
-
-        <div class="card">
-            亲爱的周璇：<br><br>
-            感谢你出现在我的生命里。<br>
-            从相识到相恋，从心动到坚定，
-            每一步都因为有你而变得意义非凡。<br><br>
-
-            2026年6月6日，
-            我们将迎来人生新的篇章。<br>
-            愿未来的日子里，彼此陪伴，彼此成就。<br><br>
-
-            —— 李解
-        </div>
-    </div>
+<section class="reveal">
+<div class="container card">
+<h2 class="title">我们的故事</h2>
+<div class="timeline">
+<div class="item">
+<h3>💌 2025.02.03 · 初次相识</h3>
+<p>故事从这一天悄悄开始。</p>
+</div>
+<div class="item">
+<h3>💕 2025.02.16 · 正式相恋</h3>
+<p>从相遇到相爱，每一天都值得纪念。</p>
+</div>
+<div class="item">
+<h3>💍 2026.06.06 · 订婚仪式</h3>
+<p>我们决定携手奔赴未来。</p>
+</div>
+</div>
+</div>
 </section>
 
-<section>
-    <div class="card invitation">
-        <div class="title">订婚邀请函</div>
-        <p>诚挚邀请您参加我们的订婚仪式</p><br>
-        <p><strong>时间：</strong>2026年6月6日</p>
-        <p><strong>地点：</strong>连云港市海州区蔚来礼宴</p><br>
-        <p>期待与您共同见证这份幸福与喜悦。</p>
-    </div>
+<section class="reveal">
+<div class="container">
+<h2 class="title">我们的照片</h2>
+<div class="gallery">
+<div class="photo">照片1</div>
+<div class="photo">照片2</div>
+<div class="photo">照片3</div>
+<div class="photo">照片4</div>
+<div class="photo">照片5</div>
+<div class="photo">照片6</div>
+</div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="container">
+<h2 class="title">写给周璇的一封信</h2>
+<div class="letter">
+<div class="image-box">放置合照</div>
+<div class="card">
+亲爱的周璇：<br><br>
+感谢你出现在我的生命里。<br>
+从相识到相恋，从心动到坚定，<br>
+每一步都因为有你而变得意义非凡。<br><br>
+2026年6月6日，<br>
+我们将迎来人生新的篇章。<br>
+愿未来的日子里，彼此陪伴，彼此成就。<br><br>
+—— 李解
+</div>
+</div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="container">
+<div class="card invitation">
+<h2 class="title">订婚邀请函</h2>
+诚挚邀请您参加我们的订婚仪式<br><br>
+时间：2026年6月6日<br>
+地点：连云港市海州区蔚来礼宴<br><br>
+期待与您共同见证这份幸福与喜悦
+</div>
+</div>
 </section>
 
 <div class="footer">
-    李解 ❤ 周璇 · 2026.06.06
+李解 ❤ 周璇 · 2026.06.06
 </div>
+
+<script>
+const start=new Date("2025-02-16");
+const now=new Date();
+document.getElementById("loveDays").innerText=
+Math.floor((now-start)/(1000*60*60*24));
+
+function countdown(){
+const target=new Date("2026-06-06 00:00:00");
+const diff=target-new Date();
+if(diff<=0)return;
+document.getElementById("d").innerText=Math.floor(diff/86400000);
+document.getElementById("h").innerText=Math.floor(diff/3600000)%24;
+document.getElementById("m").innerText=Math.floor(diff/60000)%60;
+document.getElementById("s").innerText=Math.floor(diff/1000)%60;
+}
+setInterval(countdown,1000);
+countdown();
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting)e.target.classList.add('show');
+})
+});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+function createHeart(){
+const heart=document.createElement('div');
+heart.className='heart';
+heart.innerHTML='❤';
+heart.style.left=Math.random()*100+'vw';
+heart.style.animationDuration=(5+Math.random()*5)+'s';
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),10000);
+}
+setInterval(createHeart,800);
+</script>
 
 </body>
 </html>
