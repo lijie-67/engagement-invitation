@@ -163,7 +163,14 @@ to{transform:rotate(360deg);}
 <body>
 
 <!-- 背景音乐 -->
-<audio id="bgMusic" loop>
+<!-- 背景音乐 -->
+<audio
+    id="bgMusic"
+    autoplay
+    loop
+    playsinline
+    webkit-playsinline
+>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
@@ -311,26 +318,96 @@ setTimeout(()=>heart.remove(),10000);
 setInterval(createHeart,800);
 
 // 音乐控制
-const music=document.getElementById('bgMusic');
-const musicBtn=document.getElementById('musicBtn');
+// =========================
+// 最强自动播放方案
+// =========================
 
-document.addEventListener('click',function firstPlay(){
-    music.play().catch(()=>{});
-    musicBtn.classList.add('music-rotate');
-    document.removeEventListener('click',firstPlay);
-});
+const music = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
 
-musicBtn.addEventListener('click',function(e){
-    e.stopPropagation();
+function startMusic() {
 
-    if(music.paused){
-        music.play();
+    music.play()
+    .then(() => {
+
         musicBtn.classList.add('music-rotate');
-    }else{
-        music.pause();
-        musicBtn.classList.remove('music-rotate');
+
+    })
+    .catch(() => {
+
+        console.log("浏览器阻止自动播放");
+
+    });
+
+}
+
+// 页面加载完成
+window.addEventListener(
+    'load',
+    startMusic
+);
+
+// DOM加载完成
+document.addEventListener(
+    'DOMContentLoaded',
+    startMusic
+);
+
+// 微信浏览器
+document.addEventListener(
+    'WeixinJSBridgeReady',
+    startMusic,
+    false
+);
+
+// 易信浏览器
+document.addEventListener(
+    'YixinJSBridgeReady',
+    startMusic,
+    false
+);
+
+// 手机首次触摸
+document.addEventListener(
+    'touchstart',
+    startMusic,
+    {once:true}
+);
+
+// PC首次点击
+document.addEventListener(
+    'click',
+    startMusic,
+    {once:true}
+);
+
+// 音乐按钮
+musicBtn.addEventListener(
+    'click',
+    function(e){
+
+        e.stopPropagation();
+
+        if(music.paused){
+
+            music.play();
+
+            musicBtn.classList.add(
+                'music-rotate'
+            );
+
+        }else{
+
+            music.pause();
+
+            musicBtn.classList.remove(
+                'music-rotate'
+            );
+
+        }
+
     }
-});
+);
 
 </script>
 
